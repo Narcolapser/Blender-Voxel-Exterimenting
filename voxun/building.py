@@ -6,6 +6,7 @@ def clear_children(block):
 			x.endObject()
 
 def build_block(game_logic,cur_scene,pos,build_normal):
+	return None
 	name = game_logic.selected
 	if name == "Torch":
 		print("called at 1")
@@ -46,6 +47,7 @@ def try_build(game_logic,cur_scene,own,blockray):
 			build_block(game_logic,cur_scene,pos,build_normal)
 
 def pick_at(game_logic,cur_scene,own,blockray,holdclick):
+	return None
 	if blockray.positive:
 		own['destroy'] += 1
 		block = blockray.hitObject
@@ -95,10 +97,10 @@ def update():
 		pick_at(game_logic,cur_scene,own,blockray,holdclick)
 
 	# Draw box outline if the user can build.
-	if blockray.positive:
-		outline.visible = 1
-		outline.position = get_build_location(blockray)
-	else:
-		outline.visible = 0
+	#if blockray.positive:
+	#	outline.visible = 1
+	#	outline.position = get_build_location(blockray)
+	#else:
+	#	outline.visible = 0
 
 #update()
